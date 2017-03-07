@@ -1,3 +1,96 @@
-<p>
-  home works!
-</p>
+<div class="container">
+<div class="row">
+  <div class="col-sm-8">
+    <div class="row">
+      <div class="col-sm-12 opaque1">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" *ngFor="let libro of libros"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" style="height: 400px"  >
+    <div class="item active"  >  <!-- *ngFor="let libro of libros"-->
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><img src="../../assets/Libros/Libro1.jpg" style="height: 400px"  alt=""><!-- especificar {{libro.nombre}} -->
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+       <div class="carousel-caption">
+        <h3>Título</h3>
+        <p>Autor</p>
+      </div>
+    </div>
+    <div class="item" *ngFor="let libro of libros" >  <!-- *ngFor="let libro of libros"-->
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <a [routerLink]="[libro.id,'verLibro']"><img src="../../assets/Libros/Libro{{libro.id}}.jpg" style="height: 400px"  alt=""></a>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="carousel-caption row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 opaque1">
+        <h3>{{libro.titulo}}</h3>
+        <p>{{libro.categoria}}</p>
+        <p>{{libro.editorial}}</p>
+        <p>${{libro.precio}}</p>
+        <p>{{libro.idAutor.apellidos}} {{libro.idAutor.nombres}}</p>
+          </div>
+          <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      </div>
+    </div>
+    <br>
+    <div class="row opaque1" style="height:200px;
+	overflow: auto;">
+
+        <div class="col-sm-3" *ngFor="let libro of libros">
+          <div class="row">
+            <div class="col-sm-2">
+
+          <br>
+              <a [routerLink]="[libro.id,'verLibro']" ><img src="../../assets/Libros/Libro{{libro.id}}.jpg" style="height: 200px"  alt=""></a>
+          <br><!-- especificar {{libro.nombre}} -->
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </div>
+        </div>
+
+
+
+      <br>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3 opaque1">
+    <h3>Eventos</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem cupiditate deleniti earum error impedit magni maxime minus molestias necessitatibus neque placeat possimus quam repellat repellendus sit ullam, voluptatibus voluptatum?</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem cupiditate deleniti earum error impedit magni maxime minus molestias necessitatibus neque placeat possimus quam repellat repellendus sit ullam, voluptatibus voluptatum?</p>
+    <br>
+    <h3>Publicidad</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem cupiditate deleniti earum error impedit magni maxime minus molestias necessitatibus neque placeat possimus quam repellat repellendus sit ullam, voluptatibus voluptatum?</p>
+  </div>
+</div>
+
+</div>
