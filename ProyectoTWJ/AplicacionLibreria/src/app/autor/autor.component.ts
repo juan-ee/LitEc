@@ -32,20 +32,70 @@ export class AutorComponent implements OnInit {
         }
       )
   }
-    crearAutor(formulario: NgForm) {
-      console.log(formulario);
+    crearAutor() {
       this._http.post(this._masterURL.url + "Autor", {
-        nombres: formulario.value.nombres,
-        apellidos: formulario.value.apellidos,
+        nombres: "Jorge Enrique",
+        apellidos: "Adoum",
       }).subscribe(
         (res) => {
           console.log("No hubo Errores");
           console.log(res);
           this.autores.push(res.json());
           this.nuevoAutor = {};
-         },
+        },
         (err) => {
-           console.log("Ocurrio un err or", err);
+          console.log("Ocurrio un err or", err);
+        },
+        () => {
+          console.log("Termino la función vamos a las casas")
+        }
+      );
+      this._http.post(this._masterURL.url + "Autor", {
+        nombres: "Leopoldo",
+        apellidos: "Benítes Vinueza",
+      }).subscribe(
+        (res) => {
+          console.log("No hubo Errores");
+          console.log(res);
+          this.autores.push(res.json());
+          this.nuevoAutor = {};
+        },
+        (err) => {
+          console.log("Ocurrio un err or", err);
+        },
+        () => {
+          console.log("Termino la función vamos a las casas")
+        }
+      );
+      this._http.post(this._masterURL.url + "Autor", {
+        nombres: " Eliécer",
+        apellidos: "Cárdenas",
+      }).subscribe(
+        (res) => {
+          console.log("No hubo Errores");
+          console.log(res);
+          this.autores.push(res.json());
+          this.nuevoAutor = {};
+        },
+        (err) => {
+          console.log("Ocurrio un err or", err);
+        },
+        () => {
+          console.log("Termino la función vamos a las casas")
+        }
+      );
+      this._http.post(this._masterURL.url + "Autor", {
+        nombres: "Jorge",
+        apellidos: "Carrera Andrade",
+      }).subscribe(
+        (res) => {
+          console.log("No hubo Errores");
+          console.log(res);
+          this.autores.push(res.json());
+          this.nuevoAutor = {};
+        },
+        (err) => {
+          console.log("Ocurrio un err or", err);
         },
         () => {
           console.log("Termino la función vamos a las casas")

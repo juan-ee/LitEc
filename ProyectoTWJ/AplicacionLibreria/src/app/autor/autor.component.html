@@ -2,29 +2,9 @@
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4 opaque1">
-<form class="animated bounceIn" (ngSubmit)="crearAutor(NuevoAutorForm)" #NuevoAutorForm="ngForm">
-<h1>Registrar Autor</h1>
 
-  <div class="form-group">
+  <button (click)="crearAutor()" class="btn btn-block btn-success" >Registrar Autor</button>
 
-    <label>Nombres del Autor</label>
-    <input type="text"
-           class="form-control"
-           name="nombres"
-           [(ngModel)]="nuevoAutor.nombres"
-    >
-  </div>
-  <div class="form-group">
-    <label>Apellidos del Autor</label>
-    <input type="text"
-           class="form-control"
-           name="apellidos"
-           [(ngModel)]="nuevoAutor.apellidos"
-    >
-  </div>
-  <button class="btn btn-block btn-success" >Registrar Autor</button>
-  <br>
-</form>
       </div>
       <div class="col-sm-4"></div>
     <br>
@@ -35,6 +15,7 @@
       <h1>{{autor.nombres}}</h1>
       <h1>{{autor.apellidos}}</h1>
       <p>ID:{{autor.id}}</p>
+      <a (click)="borrarAutor(autor.id)" class="btn btn-danger btn-block">X</a>
     </div>
   </div>
 </div>
