@@ -18,7 +18,7 @@
       <label style="font-size: 20px;">Precio:</label>
       <h6 style="font-size: 20px;"> $ {{libro.precio}}</h6>
       <br/>
-      <button class="btn btn-lg btn-success">Añadir al carrito</button>
+      <button class="btn btn-lg btn-success" (click)="agregarCarrito(libro.id)">Añadir al carrito</button>
       <br/><br/><br/><br/><br/><br/>
       <a [routerLink]="['/libros']" class="btn btn-lg btn-info">Libros relacionados</a>
     </div>

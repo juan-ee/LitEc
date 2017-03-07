@@ -11,6 +11,8 @@ import {routing} from "./app.routes";
 import {MasterURlService} from "./services/master-url.service";
 import { LibroMostrarComponent } from './libro/libro-mostrar/libro-mostrar.component';
 import { LibroInformacionComponent } from './libro/libro-informacion/libro-informacion.component';
+import {CarritoService} from "./services/carrito.service";
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { LibroInformacionComponent } from './libro/libro-informacion/libro-infor
     UsuarioComponent,
     HomeComponent,
     LibroMostrarComponent,
-    LibroInformacionComponent
+    LibroInformacionComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { LibroInformacionComponent } from './libro/libro-informacion/libro-infor
     routing
   ],
   providers: [
-    MasterURlService
+    MasterURlService,
+    CarritoService
   ],
   bootstrap: [AppComponent]
 })

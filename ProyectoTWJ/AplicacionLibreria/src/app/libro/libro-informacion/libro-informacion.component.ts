@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MasterURlService} from "../../services/master-url.service";
 import {Http} from "@angular/http";
 import {ActivatedRoute} from "@angular/router";
+import {CarritoService} from "../../services/carrito.service";
 
 @Component({
   selector: 'app-libro-informacion',
@@ -19,7 +20,7 @@ export class LibroInformacionComponent implements OnInit {
   autor={};
   _parametros:any;
 
-  constructor(private _http:Http,private _masterURL:MasterURlService, private _activetedRoute:ActivatedRoute) {
+  constructor(private _http:Http,private _masterURL:MasterURlService, private _activetedRoute:ActivatedRoute, private carrito:CarritoService) {
   }
 
   ngOnInit() {
@@ -42,7 +43,9 @@ export class LibroInformacionComponent implements OnInit {
     });
   }
 
-
+  agregarCarrito(id){
+    this.carrito.agregarLibro(id);
+  }
 
 
 }

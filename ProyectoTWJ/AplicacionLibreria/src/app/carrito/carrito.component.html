@@ -1,0 +1,58 @@
+<!--VISTA LISTAR TODOS CELULAR-->
+<div class="container">
+  <h1 *ngIf="libros.length==0">No hay libros en el carrito</h1>
+  <!--<a [routerLink]="['/crearlibro',_parametros.idcel]" class="btn btn-sm btn-success ">Añadir nueva libro</a>-->
+  <div *ngIf="libros.length>0">
+    <h1>Carrito</h1>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th><h3>Libro</h3></th>
+        <th><h3>Precio</h3></th>
+        <th><h3>Unidades</h3></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let libro of libros">
+      <tr>
+        <td><h4> {{libro.titulo }}</h4></td>
+        <td><h4> {{libro.precio}}</h4></td>
+        <td>
+          <div class="input-group spinner">
+            <input type="text" class="form-control" value="1" min="0" max="5">
+            <div class="input-group-btn-vertical">
+              <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+              <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+            </div>
+          </div>
+        </td>
+        <td><button class="btn btn-danger">Quitar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    $('.spinner .btn:first-of-type').on('click', function() {
+      var btn = $(this);
+      var input = btn.closest('.spinner').find('input');
+      if (input.attr('max') == undefined || parseInt(input.val()) < parseInt(input.attr('max'))) {
+        input.val(parseInt(input.val(), 10) + 1);
+      } else {
+        btn.next("disabled", true);
+      }
+    });
+    $('.spinner .btn:last-of-type').on('click', function() {
+      var btn = $(this);
+      var input = btn.closest('.spinner').find('input');
+      if (input.attr('min') == undefined || parseInt(input.val()) > parseInt(input.attr('min'))) {
+        input.val(parseInt(input.val(), 10) - 1);
+      } else {
+        btn.prev("disabled", true);
+      }
+    });
+  })
+</script>
