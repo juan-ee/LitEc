@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
 import {MasterURlService} from "../services/master-url.service";
 import {CarritoService} from "../services/carrito.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-carrito',
@@ -9,9 +10,12 @@ import {CarritoService} from "../services/carrito.service";
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+  subtotal:number;
+  iva:number;
+  total:number;
 
   libros=[];
-  constructor(private _http:Http,private _masterURL:MasterURlService, private carrito:CarritoService) {
+  constructor(private _http:Http,private _masterURL:MasterURlService, private carrito:CarritoService, private router:Router) {
 
   }
 
@@ -32,5 +36,12 @@ export class CarritoComponent implements OnInit {
         }
       );
   }
+
+  realizarCompra(){
+    //this.carrito.setearCarro();
+    //this.router.navigate(['/home']);
+  }
+
+
 
 }

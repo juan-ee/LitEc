@@ -19,4 +19,9 @@ export class CarritoService {
   get carro():number[]{
     return this.libros_carro;
   }
+
+  setearCarro(){
+    this.libros_carro=[];
+  }
+
 }
