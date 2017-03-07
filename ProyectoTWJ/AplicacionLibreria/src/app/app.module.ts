@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CompraComponent } from './compra/compra.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
 import {routing} from "./app.routes";
@@ -19,7 +18,6 @@ import { RegistroComponent } from './usuario/registro/registro.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CompraComponent,
     UsuarioComponent,
     HomeComponent,
     LibroMostrarComponent,

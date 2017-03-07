@@ -5,6 +5,7 @@ import {LibroMostrarComponent} from "./libro/libro-mostrar/libro-mostrar.compone
 import {LibroInformacionComponent} from "./libro/libro-informacion/libro-informacion.component";
 import {CarritoComponent} from "./carrito/carrito.component";
 import {RegistroComponent} from "./usuario/registro/registro.component";
+import {UsuarioComponent} from "./usuario/usuario.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ export const routes: Routes = [
   {path: 'libro/:id/:ruta', component: LibroInformacionComponent},
   {path: 'carrito', component: CarritoComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'micuenta', component: UsuarioComponent},
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Http, Response} from "@angular/http";
+import {Http} from "@angular/http";
 import {MasterURlService} from "../../services/master-url.service";
-import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registro',
@@ -9,47 +9,24 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  private _parametros: any;
-  usuarios=[];
   nuevoUsuario= {};
  constructor(private _http: Http,
-              private _masterURL: MasterURlService) { }
+              private _masterURL: MasterURlService,private router:Router) { }
 
   ngOnInit() {
-    this._http.get(this._masterURL.url + "Autor")
-      .subscribe(
-        (res: Response) => {
-          this.usuarios= res.json()
-            .map((value) => {
-              return value;
-            });
-        },
-        (err) => {
-          console.log(err);
-        }
-      )
   }
-  crearAutor(formulario: NgForm) {
-    this._http.post(this._masterURL.url + "Autor", {
-      nombres: formulario.value.nombres,
-      apellidos:formulario.value.apellidos,
-      nickname: formulario.value.nickname,
-      password: formulario.value.password,
-    }).subscribe(
+
+  crearUsuario() {
+    this._http.post(this._masterURL.url + "usuario",this.nuevoUsuario).subscribe(
       (res) => {
-        console.log("No hubo Errores");
-        console.log(res);
-        this.usuarios.push(res.json());
-        this.nuevoUsuario = {};
+        console.log('Se creo:',res.json());
+        this.router.navigate(['/home']);
+        this.nuevoUsuario={};
       },
       (err) => {
-        console.log("Ocurrio un err or", err);
-      },
-      () => {
-        console.log("Termino la función vamos a las casas")
+        alert("Ocurrio un error"+err.toString());
       }
     );
-
   }
 
 }
