@@ -1,7 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 opaque1">
+<form class="animated bounceIn" (ngSubmit)="crearAutor(NuevoAutorForm)" #NuevoAutorForm="ngForm">
 <h1>Registrar Autor</h1>
 
-<div class="container">
   <div class="form-group">
+
     <label>Nombres del Autor</label>
     <input type="text"
            class="form-control"
@@ -18,9 +23,15 @@
     >
   </div>
   <button class="btn btn-block btn-success" >Registrar Autor</button>
-
+  <br>
+</form>
+      </div>
+      <div class="col-sm-4"></div>
+    <br>
+  </div>
   <div class="row">
-    <div class="col-sm-12" *ngFor="let autor of autores">
+    <br>
+    <div class="col-sm-12 opaque1" *ngFor="let autor of autores">
       <h1>{{autor.nombres}}</h1>
       <h1>{{autor.apellidos}}</h1>
       <p>ID:{{autor.id}}</p>
