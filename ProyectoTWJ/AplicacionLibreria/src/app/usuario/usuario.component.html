@@ -31,6 +31,29 @@
       </div>
     </div>
   </div>
+  <br/>
+  <h1>Libros Comprados:</h1>
+  <h2 *ngIf="libros.length==0">No se ha comprado nada todavia</h2>
+  <div *ngIf="libros.length>0">
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th><h3>Titulo</h3></th>
+        <th><h3>Categoria</h3></th>
+        <th><h3>Editorial</h3></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let libro of libros">
+      <tr>
+        <td><h4> {{libro.titulo }}</h4></td>
+        <td><h4> {{libro.categoria}}</h4></td>
+        <td><h4> {{libro.editorial}}</h4></td>
+        <!--<td><h4> {{libro.idAutor.nombres}}</h4></td>-->
+      </tr>
+      </tbody>
+    </table>
 
-
+  </div>
 </div>
