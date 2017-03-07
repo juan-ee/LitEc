@@ -20,37 +20,36 @@
         <td><h4> {{libro.precio}}</h4></td>
         <td>
           <div class="col-sm-3">
-            <input type="number" min="1" max="100" value="1">
+            <input type="number" min="1" max="100" [value]="libro.num" (change)="cambiarTotalNum($event,libro)">
           </div>
 
         </td>
-        <td><button class="btn btn-sm btn-danger">Quitar</button></td>
+        <td><button class="btn btn-sm btn-danger" (click)="quitarLibro(libro)">Quitar</button></td>
       </tr>
       </tbody>
     </table>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-sm-8">
+    <hr>
+    <div class="row">
+      <div class="col-sm-8">
+      </div>
+      <div class="col-sm-4">
+        <h6 style="font-size: 20px;"> <span><label >Total: </label></span> {{total}} </h6>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <h6 style="font-size: 20px;"> <span><label >Subtotal: </label></span> 15 </h6>
-      <h6 style="font-size: 20px;"> <span><label >IVA(14%): </label></span> 15 </h6>
-      <h6 style="font-size: 20px;"> <span><label >Total: </label></span> 15 </h6>
-    </div>
-  </div>
-  <hr>
+    <hr>
 
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-2">
-      <a [routerLink]="['/libros']" class="btn btn-lg btn-info">Ver mas libros</a>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-2">
+        <a [routerLink]="['/libros']" class="btn btn-lg btn-info">Ver mas libros</a>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-2">
+        <button class="btn btn-lg btn-success" (click)="realizarCompra()">$ Realizar la Compra</button>
+      </div>
+      <div class="col-sm-3"></div>
     </div>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-2">
-      <button class="btn btn-lg btn-success" (click)="realizarCompra()">$ Realizar la Compra</button>
-    </div>
-    <div class="col-sm-3"></div>
   </div>
+
 </div>
 

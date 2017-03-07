@@ -10,13 +10,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  subtotal:number;
-  iva:number;
   total:number;
 
   libros=[];
   constructor(private _http:Http,private _masterURL:MasterURlService, private carrito:CarritoService, private router:Router) {
-
+    this.total=0;
   }
 
   ngOnInit() {
@@ -28,7 +26,15 @@ export class CarritoComponent implements OnInit {
       .subscribe(
         (res)=>{
           //this.aplicaciones=res.json();
-          this.libros=res.json();
+          this.libros=res.json().map((value) => {
+            this.total+=value.precio;
+            return {
+              id:value.id,
+              titulo:value.titulo,
+              precio:value.precio,
+              num:1
+            };
+          });;
           console.log(this.libros);
         },
         (err)=>{
@@ -42,6 +48,23 @@ export class CarritoComponent implements OnInit {
     //this.router.navigate(['/home']);
   }
 
+  cambiarTotalNum(event, lib){
+//    alert(event.target.value);
+    var act=event.target.value;
+    if(act<lib.num){
+      this.total-=(lib.num-act)*lib.precio;
+    }else{
+      this.total+=(act-lib.num)*lib.precio;
+    }
+
+    lib.num=act;
+  }
+
+  quitarLibro(libro){
+    this.total-=libro.num*libro.precio;
+    this.libros.splice(this.libros.indexOf(libro),1);
+    this.carrito.libros_carro.splice(this.carrito.libros_carro.indexOf(libro.id),1);
+  }
 
 
 }
