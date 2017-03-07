@@ -22,7 +22,6 @@ module.exports = {
     apellidos:{
       type:'string'
     },
-
     compras:{
       collection:"Compra",
       via:"idUsuario"

@@ -13,7 +13,8 @@ module.exports = {
       type:'string'
     },
     categoria:{
-      type:'string'
+      type:'string',
+      enum:['Terror','Suspenso','Amor','Erotismo','Ciencia Ficcion']
     },
     editorial:{
       type:'string'
