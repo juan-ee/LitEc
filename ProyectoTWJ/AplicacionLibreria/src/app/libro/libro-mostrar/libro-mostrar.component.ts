@@ -27,7 +27,7 @@ export class LibroMostrarComponent implements OnInit {
           this.libros=res.json().map((value) => {
             value.ruta = this.ruta;
             return value;
-          });;
+          });
         },
         (err)=>{
           alert("Ocurrio un error"+err.toString());
