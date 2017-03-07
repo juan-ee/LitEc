@@ -68,7 +68,8 @@
             <div class="col-sm-2">
 
           <br>
-              <a [routerLink]="['/libro',libro.id,libro.ruta]" ><img [src]="libro.ruta" style="height: 200px"  alt=""></a>
+              <a [routerLink]="['/libro',libro.id,libro.ruta]" ><img [src]="libro.ruta" style="height: 150px"  alt=""></a>
+              <p>{{libro.titulo}}-{{libro.idAutor.apellidos}} {{libro.idAutor.nombres}}</p>
           <br><!-- especificar {{libro.nombre}} -->
             </div>
             <div class="col-sm-1">

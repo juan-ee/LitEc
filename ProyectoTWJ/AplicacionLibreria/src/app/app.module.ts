@@ -13,6 +13,8 @@ import { LibroMostrarComponent } from './libro/libro-mostrar/libro-mostrar.compo
 import { LibroInformacionComponent } from './libro/libro-informacion/libro-informacion.component';
 import {CarritoService} from "./services/carrito.service";
 import { CarritoComponent } from './carrito/carrito.component';
+import { LoginComponent } from './usuario/login/login.component';
+import { RegistroComponent } from './usuario/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     HomeComponent,
     LibroMostrarComponent,
     LibroInformacionComponent,
-    CarritoComponent
+    CarritoComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

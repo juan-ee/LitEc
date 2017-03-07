@@ -1,0 +1,39 @@
+<form class="animated bounceIn" (submit)="crearAutor(NuevoAutorForm)" #NuevoAutorForm="ngForm=">
+<h1>Registrar Autor</h1>
+
+<div class="container">
+  <div class="form-group">
+    <label>Nombres</label>
+    <input type="text"
+           class="form-control"
+           name="nombres"
+           [(ngModel)]="nuevoUsuario.nombres"
+    >
+  </div>
+  <div class="form-group">
+    <label>Apellidos</label>
+    <input type="text"
+           class="form-control"
+           name="apellidos"
+           [(ngModel)]="nuevoAutor.apellidos"
+    >
+  </div>
+  <div class="form-group">
+    <label>Nickname</label>
+    <input type="text"
+           class="form-control"
+           name="nickname"
+           [(ngModel)]="nuevoAutor.nickname"
+    >
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text"
+           class="form-control"
+           name="password"
+           [(ngModel)]="nuevoAutor.password"
+    >
+  </div>
+  <button class="btn btn-block btn-success" >Registrar Autor</button>
+</div>
+</form>
