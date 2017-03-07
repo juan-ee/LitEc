@@ -16,10 +16,7 @@ export class HomeComponent implements OnInit {
     this._http.get(this._masterURL.url + "Libro")
       .subscribe(
         (res: Response) => {
-          this.libros = res.json()
-            .map((value) => {
-              return value;
-            });
+          this.libros = res.json();
         },
         (err) => {
           console.log(err);

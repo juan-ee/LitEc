@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {MasterURlService} from "../services/master-url.service";
 import {ActivatedRoute} from "@angular/router";
-import { map } from 'rxjs/operator/map';
 @Component({
   selector: 'app-libro',
   templateUrl: './libro.component.html',
@@ -10,7 +9,7 @@ import { map } from 'rxjs/operator/map';
 })
 export class LibroComponent implements OnInit {
   private _parametros: any;
-  libros=[];
+  book;
   constructor(private _ActivatedRoute: ActivatedRoute,
               private _http:Http,
               private _masterURL:MasterURlService) { }
@@ -24,10 +23,9 @@ export class LibroComponent implements OnInit {
         this._http.get(this._masterURL.url + 'Libro?id=' + this._parametros.idLibro).subscribe(
 
           (res: Response) => {
-            this.libros = res.json()
-              .map((value) => {
-                return value;
-              });
+            console.log("No hubo Errores");
+            this.book = res.json();
+            console.log(this.book.titulo);
           },
           (err) => {
             console.log(err);
