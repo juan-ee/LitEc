@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <a [routerLink]="[libro.id,'verLibro']"><img src="../../assets/Libros/Libro{{libro.id}}.jpg" style="height: 400px"  alt=""></a>
+          <a [routerLink]="['/libro',libro.id,libro.ruta]"><img [src]="libro.ruta" style="height: 400px"  alt=""></a>
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -68,7 +68,7 @@
             <div class="col-sm-2">
 
           <br>
-              <a [routerLink]="[libro.id,'verLibro']" ><img src="../../assets/Libros/Libro{{libro.id}}.jpg" style="height: 200px"  alt=""></a>
+              <a [routerLink]="['/libro',libro.id,libro.ruta]" ><img [src]="libro.ruta" style="height: 200px"  alt=""></a>
           <br><!-- especificar {{libro.nombre}} -->
             </div>
             <div class="col-sm-1">
