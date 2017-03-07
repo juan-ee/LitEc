@@ -9,6 +9,8 @@ import { AutorComponent } from './autor/autor.component';
 import { CompraComponent } from './compra/compra.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
+import {routing} from "./app.routes";
+import {MasterURlService} from "./services/master-url.service";
 
 @NgModule({
   declarations: [
@@ -22,9 +24,12 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    MasterURlService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

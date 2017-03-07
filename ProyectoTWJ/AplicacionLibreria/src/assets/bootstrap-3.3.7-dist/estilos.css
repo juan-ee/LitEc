@@ -1,0 +1,22 @@
+.opaque1 {
+    background-color: rgba(54, 25, 25, .5);
+    color: white;
+    border-radius: 5px;
+}
+html {
+  height:100%;
+  width:100%;
+}
+body {
+    background-image: url("libro-fondo1.jpg");
+    background-color: black;
+  background-size:100%;
+}
+
+.poke{
+  display: inline;
+}
+
+
+
+
