@@ -6,11 +6,23 @@
  */
 
 module.exports = {
-
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
-      idUsuario:{
-        model:"Usuario"
-      },
+    subtotal:{
+      type:'float'
+    },
+    iva:{
+      type:'float'
+    },
+    total:{
+      type:'float'
+    },
+
+    idUsuario:{
+      model:"Usuario"
+    },
+
     libros: {
       collection: 'Libro',
       via: 'compras',

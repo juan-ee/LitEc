@@ -6,8 +6,23 @@
  */
 
 module.exports = {
-
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
+    nickname:{
+      type:'string',
+      unique:true
+    },
+    password:{
+      type:'string'
+    },
+    nombres:{
+      type:'string'
+    },
+    apellidos:{
+      type:'string'
+    },
+
     compras:{
       collection:"Compra",
       via:"idUsuario"
