@@ -6,7 +6,7 @@ export class CarritoService {
 
   constructor() {
     this.libros_carro=[];
-    this.libros_carro.push(182);
+    //this.libros_carro.push(182);
   }
 
   agregarLibro(id:number){
