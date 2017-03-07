@@ -44,12 +44,24 @@ export class CarritoComponent implements OnInit {
   }
 
   realizarCompra(){
-    //this.carrito.setearCarro();
-    //this.router.navigate(['/home']);
+    this._http.post(this._masterURL.url+'compra/registrarCompra',{
+      total:this.total,
+      idUsuario:1,
+      libros:this.carrito.carro
+    })
+      .subscribe(
+        (res)=>{
+          console.log(res.json());
+        },
+        (err)=>{
+          console.log(err);
+        }
+      );
+    this.carrito.setearCarro();
+    this.router.navigate(['/home']);
   }
 
   cambiarTotalNum(event, lib){
-//    alert(event.target.value);
     var act=event.target.value;
     if(act<lib.num){
       this.total-=(lib.num-act)*lib.precio;

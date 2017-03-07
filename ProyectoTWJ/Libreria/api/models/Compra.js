@@ -9,20 +9,12 @@ module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
   attributes: {
-    subtotal:{
-      type:'float'
-    },
-    iva:{
-      type:'float'
-    },
     total:{
       type:'float'
     },
-
     idUsuario:{
       model:"Usuario"
     },
-
     libros: {
       collection: 'Libro',
       via: 'compras',
