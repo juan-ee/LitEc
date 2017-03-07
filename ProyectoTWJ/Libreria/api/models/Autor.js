@@ -6,8 +6,15 @@
  */
 
 module.exports = {
-
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
+    nombres:{
+      type:'string'
+    },
+    apellidos:{
+      type:'string'
+    },
     libros:{
       collection:"Libro",
       via:"idAutor"

@@ -12,8 +12,4 @@ export class MasterURlService {
     return this._url;
   }
 
-  set url(nuevoUrl:string){
-    this._url = nuevoUrl;
-  }
-
 }

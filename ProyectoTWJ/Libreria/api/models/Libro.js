@@ -6,11 +6,29 @@
  */
 
 module.exports = {
-
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
+    titulo:{
+      type:'string'
+    },
+    categoria:{
+      type:'string'
+    },
+    editorial:{
+      type:'string'
+    },
+    precio:{
+      type:'float'
+    },
+    isbn:{
+      type:'string'
+    },
+
     idAutor:{
       model:"Autor"
     },
+
     compras: {
       collection: 'Compra',
       via: 'libros'
