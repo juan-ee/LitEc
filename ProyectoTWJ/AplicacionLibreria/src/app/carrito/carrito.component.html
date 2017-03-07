@@ -1,0 +1,56 @@
+<!--VISTA LISTAR TODOS CELULAR-->
+<div class="container">
+  <h1 *ngIf="libros.length==0">No hay libros en el carrito</h1>
+  <!--<a [routerLink]="['/crearlibro',_parametros.idcel]" class="btn btn-sm btn-success ">Añadir nueva libro</a>-->
+  <div *ngIf="libros.length>0">
+    <h1>Carrito</h1>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th><h3>Libro</h3></th>
+        <th><h3>Precio</h3></th>
+        <th><h3>Unidades</h3></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let libro of libros">
+      <tr>
+        <td><h4> {{libro.titulo }}</h4></td>
+        <td><h4> {{libro.precio}}</h4></td>
+        <td>
+          <div class="col-sm-3">
+            <input type="number" min="1" max="100" value="1">
+          </div>
+
+        </td>
+        <td><button class="btn btn-sm btn-danger">Quitar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-8">
+    </div>
+    <div class="col-sm-4">
+      <h6 style="font-size: 20px;"> <span><label >Subtotal: </label></span> 15 </h6>
+      <h6 style="font-size: 20px;"> <span><label >IVA(14%): </label></span> 15 </h6>
+      <h6 style="font-size: 20px;"> <span><label >Total: </label></span> 15 </h6>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-2">
+      <a [routerLink]="['/libros']" class="btn btn-lg btn-info">Ver mas libros</a>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2">
+      <button class="btn btn-lg btn-success" (click)="realizarCompra()">$ Realizar la Compra</button>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
+
