@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MasterURlService} from "../services/master-url.service";
+import {Http, Response} from "@angular/http";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  libros=[];
+  constructor(private _http: Http,
+              private _masterURL: MasterURlService) { }
 
   ngOnInit() {
+    this._http.get(this._masterURL.url + "Libro")
+      .subscribe(
+        (res: Response) => {
+          this.libros = res.json()
+            .map((value) => {
+              return value;
+            });
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
   }
 
 }
