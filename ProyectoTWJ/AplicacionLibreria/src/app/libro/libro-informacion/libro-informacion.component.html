@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <img [src]="_parametros.ruta" height="400" width="300">
+      <br/>
+      <h2>Descripcion</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa esse laboriosam magnam modi odit placeat quidem voluptatem? Aspernatur autem consectetur expedita in minus nisi provident quidem repudiandae sapiente veniam.</p>
+    </div>
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-5">
+      <label style="font-size: 20px;">Titulo:</label>
+      <h6 style="font-size: 20px;"> {{libro.titulo}} </h6>
+      <label style="font-size: 20px;">Autor:</label>
+      <h6 style="font-size: 20px;"> {{autor.nombres}} {{autor.apellidos}}</h6>
+      <label style="font-size: 20px;">Editorial:</label>
+      <h6 style="font-size: 20px;"> {{libro.editorial}}</h6>
+      <label style="font-size: 20px;">Precio:</label>
+      <h6 style="font-size: 20px;"> $ {{libro.precio}}</h6>
+      <br/>
+      <button class="btn btn-lg btn-success">Añadir al carrito</button>
+      <br/><br/><br/><br/><br/><br/>
+      <a [routerLink]="['/libros']" class="btn btn-lg btn-info">Libros relacionados</a>
+    </div>
+    <br/>
+  </div>
+  <br/>
+
+</div>

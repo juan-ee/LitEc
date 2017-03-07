@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let libro of libros">
+      <img [src]="libro.ruta" width="200" height="300" align="center">
+      <br/>
+      <br/>
+      <div class="div" style="margin: 5px 5px 5px 5px;">
+        <label >Autor:</label>
+        <h4 >{{libro.idAutor.nombres}} {{libro.idAutor.apellidos}}</h4>
+        <label >Titulo:</label>
+        <h4 >{{libro.titulo}}</h4>
+        <a class="btn btn-info" [routerLink]="['/libro',libro.id,libro.ruta]">Ver mas ...</a>
+      </div>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+</div>
